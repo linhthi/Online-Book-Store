@@ -11,6 +11,7 @@ db.sequelize.sync({force: true}).then(() => {
 });
  
 require('./app/route/book.route.js')(app);
+require('./app/route/category.route.js')(app);
  
 // Create a Server
 var server = app.listen(8081, function () {
