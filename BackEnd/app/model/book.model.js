@@ -8,10 +8,10 @@ module.exports = (sequelize, Sequelize) => {
       },
       	price: {
         type: Sequelize.INTEGER
-	  },
-	  book_code: {
-		  type: Sequelize.STRING
-	  }
+      },
+      book_code: {
+        type: Sequelize.STRING
+      }
     });
     
     return Book;
