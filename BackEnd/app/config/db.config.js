@@ -23,6 +23,7 @@ db.sequelize = sequelize;
 //Models/tables
 db.books = require('../model/book.model.js')(sequelize, Sequelize);
 db.categories = require('../model/category.model.js')(sequelize, Sequelize);
+db.orders = require('../model/order.model.js')(sequelize, Sequelize);
  
  
 module.exports = db;
