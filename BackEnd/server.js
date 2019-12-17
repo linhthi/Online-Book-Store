@@ -6,8 +6,8 @@ app.use(bodyParser.json())
 const db = require('./app/config/db.config.js');
   
 // force: true will drop the table if it already exists
-db.sequelize.sync({force: true}).then(() => {
-  console.log('{ force: true }');
+db.sequelize.sync({force: false}).then(() => {
+  console.log('{ force: false }');
 });
  
 require('./app/route/book.route.js')(app);
