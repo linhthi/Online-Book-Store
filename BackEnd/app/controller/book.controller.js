@@ -7,8 +7,15 @@ exports.create = (req, res) => {
   book.create({  
     title: req.body.title,
     author: req.body.author,
+    translator: req.body.translator,
+    publisher: req.body.publisher,
     price: req.body.price,
-    book_code: req.body.book_code
+    page_number: req.body.page_number,
+    size: req.body.size,
+    description: req.body.description,
+    cover: req.body.cover,
+    category_id: req.body.category_id,
+    day_release: req.body.day_release
   }).then(book => {    
     // Send created book to client
     res.send(book);
@@ -33,11 +40,23 @@ exports.findById = (req, res) => {
 // Update a book
 exports.update = (req, res) => {
   const id = req.params.bookId;
-  book.update( { title: req.body.title, author: req.body.author, price: req.body.price, book_code: req.body.book_code }, 
-           { where: {id: req.params.bookId} }
-           ).then(() => {
-           res.status(200).send("updated successfully a book with id = " + id);
-           });
+  book.update( { 
+    title: req.body.title,
+    author: req.body.author,
+    translator: req.body.translator,
+    publisher: req.body.publisher,
+    price: req.body.price,
+    page_number: req.body.page_number,
+    size: req.body.size,
+    description: req.body.description,
+    cover: req.body.cover,
+    category_id: req.body.category_id,
+    day_release: req.body.day_release
+  }, 
+  { where: {id: req.params.bookId} })
+  .then(() => {
+       res.status(200).send("updated successfully a book with id = " + id);
+    });
 };
  
 // Delete a book by Id
