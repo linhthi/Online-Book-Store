@@ -1,0 +1,16 @@
+.container {
+    margin-left: 30px;
+}
+
+.row {
+    display: flex;
+}
+
+.col1 {
+    width: 80%;
+    float: left;
+}
+.col2 {
+    width: 20%;
+    float: right;
+}
