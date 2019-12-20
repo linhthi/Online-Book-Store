@@ -7,8 +7,10 @@ import Brand from './Brand';
 import MainNav from './MainNav';
 import BooksNewPage from './BooksNewPage';
 import CategoryPage from './CategoryPage';
-import Admin from './Admin';
-import CheckOrder from './CheckOrder';
+import Checkorder from './Check-order';
+import Cart from './Cart';
+import InforBook from './InforBook/index.js';
+import Payment from './payment/index.js';
 
 function App() {
   return (
@@ -20,10 +22,12 @@ function App() {
         <Route path="/category" component={CategoryPage} />
         <Route path="/topselling" component={CategoryPage} />
         <Route path="/promotion" component={CategoryPage} />
-        <Route path="/discountSpecial" component={CategoryPage} />
-		<Route path="/admin" component={Admin} />
-		<Route path="/checkOrder" component={ CheckOrder } />
+        <Route path="/discoutSpecial" component={CategoryPage} />
         <Route path="/" exact component={BooksNewPage} />
+        <Route path="/Checkorder" exact component={Checkorder} />
+        <Route path="/Cart" exact component={Cart} />
+        <Route path="/infor" exact component={InforBook} />
+        <Route path="/payment" exact component={Payment} />
       </div>
       </Router>
   );

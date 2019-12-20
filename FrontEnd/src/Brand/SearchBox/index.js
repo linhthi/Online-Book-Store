@@ -6,7 +6,7 @@ function SearchBox() {
     return (
         <div>
             <Form>
-                <FormControl type="text" placeholder="Nhập tên sách ..." className="mr-sm-2"></FormControl>
+                <FormControl type="text" placeholder="Enter title book" className="mr-sm-2"></FormControl>
             </Form>
         </div>
     );
