@@ -4,7 +4,8 @@ import {Link} from 'react-router-dom';
 
 function MainNav() {
     const navStyle = {
-        color: 'black'
+        color: 'black',
+        fontSize: '18px'
     }
 
 

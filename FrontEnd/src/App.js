@@ -29,6 +29,7 @@ function App() {
         <Route path="/Cart" exact component={Cart} />
         <Route path="/infor" exact component={InforBook} />
         <Route path="/payment" exact component={Payment} />
+        <Route path="/book/:id" component={InforBook} />
       </div>
       </Router>
   );
