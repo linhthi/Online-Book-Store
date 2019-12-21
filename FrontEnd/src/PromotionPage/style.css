@@ -1,0 +1,21 @@
+.main {
+	width: 60%;
+	margin: 0 auto;
+	background-image: url(nen1.jpg);
+	height: 1400px;
+}
+h1 {
+	color: red;
+	text-align: center;
+}
+.Promotion{
+	margin-left: 20px;
+}
+.logo{
+	width: 500px;
+	height: 500px;
+}
+
+div {
+	margin: 0 auto;
+}

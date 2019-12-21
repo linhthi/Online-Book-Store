@@ -12,6 +12,7 @@ import Cart from './Cart';
 import InforBook from './InforBook/index.js';
 import Payment from './payment/index.js';
 import BookList from './BookList';
+import PromotionPage from './PromotionPage';
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
         <MainNav />
         <Route path="/category" component={CategoryPage} />
         <Route path="/topselling" component={BookList} />
-        <Route path="/promotion" component={CategoryPage} />
+        <Route path="/promotion" component={PromotionPage} />
         <Route path="/discountSpecial" component={CategoryPage} />
         <Route path="/" exact component={BooksNewPage} />
         <Route path="/Checkorder" exact component={Checkorder} />
