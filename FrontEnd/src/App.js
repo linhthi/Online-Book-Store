@@ -13,6 +13,7 @@ import InforBook from './InforBook/index.js';
 import Payment from './payment/index.js';
 import BookList from './BookList';
 import PromotionPage from './PromotionPage';
+import Admin from './Admin';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Brand />
         <MainNav />
         <Route path="/category" component={CategoryPage} />
+        <Route path="/admin" component={Admin} />
         <Route path="/topselling" component={BookList} />
         <Route path="/promotion" component={PromotionPage} />
         <Route path="/discountSpecial" component={CategoryPage} />

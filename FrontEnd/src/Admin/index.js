@@ -1,9 +1,10 @@
 import React from 'react';
+import Login from './Login';
 
 function Admin() {
     return(
         <div>
-            Admin page
+            <Login />
         </div>
     );
 }
