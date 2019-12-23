@@ -1,8 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
+import { useAppContext } from '../ContextApp/useContextApp';
 
 
 function BookList() {
+
+    const {
+        book,
+        updateBook
+    } = useAppContext();
+
 
     useEffect(() => {
         fetchBooks();
@@ -18,12 +25,15 @@ function BookList() {
         );
     
         const books = await data.json();
-        console.log(books);
+        //console.log(books);
         setBooks(books);
+        updateBook(books);
     }
+
 
     return(
         <ul className="list-inline" style={{marginTop: "30px", marginLeft: "60px", marginRight: "40px"}}>
+            {console.log(book)}
             {books.map(book => (
                 <li className="list-inline-item" key={book.id}>
                 

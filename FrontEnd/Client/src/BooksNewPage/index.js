@@ -1,23 +1,11 @@
 import React from 'react';
-import InforBook from './../InforBook';
-import Product from '../Product/product.js';
+import BookList from '../BookList';
 function BooksNewpage() {
     return(
         <div>
-           	<div className= "text-center">   <h2 >Trang chủ </h2>  </div>
-            <div className="container">
-            	<div className="row">
-            			<div className="row">
-            				<div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            					<Product> </Product>
-                                <Product> </Product>
-                                <Product> </Product>
-                                <Product> </Product>
-            				</div>
-            			</div>
-            	</div>	
-
-            </div>
+           	
+            	<img className="d-block w-100" src="https://raw.githubusercontent.com/linhthi/SE-INT2208/master/book1.jpg" />
+                <BookList />
 		
         </div>
 

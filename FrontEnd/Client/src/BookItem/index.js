@@ -1,11 +1,16 @@
 import React, {useEffect, useState} from 'react';
-import Logo from '../Product/product.jpg';
+import { useAppContext } from '../ContextApp/useContextApp';
 
-function InforBook({match}) {
+
+function BookItem({match}) {
+
+	const {
+        cart,
+        updateCart
+    } = useAppContext();
 
 	useEffect(() => {
 		fetchItem();
-		console.log(match);
 	}, []);
 
 	const [book, setBook] = useState({});
@@ -16,13 +21,22 @@ function InforBook({match}) {
 			method: 'GET'
 		});
 		const book = await fetchItem.json();
-		console.log(book);
 		setBook(book);
 	}
 
 	function addToBag(){
 		alert("Bạn đã thêm vào giỏ hàng thành công");
+		if (localStorage.getItem(book.id) !== null) {
+			localStorage.setItem(book.id, parseInt(localStorage.getItem(book.id)) + 1);
+		}
+		else {
+			localStorage.setItem(book.id, 1);
+		}
+		cart.push(book);
+		updateCart(cart);
+		
 	}
+
 
     return(
     <div>
@@ -85,11 +99,11 @@ function InforBook({match}) {
         			THÊM VÀO GIỎ HÀNG
         		</button>
 
-        	</div>           
+        	</div>         
 		</div>
 	</div>
 
     );
 }
 
-export default InforBook;
+export default BookItem;
