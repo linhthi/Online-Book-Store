@@ -8,6 +8,8 @@ function Cart() {
         updateCart
     } = useAppContext();
 
+    
+
     return (
 
         <div className="row">
@@ -25,6 +27,7 @@ function Cart() {
                         <th scope="col">Giá</th>
                         <th scope="col">Số lượng</th>
                         <th scope="col">Tổng</th>
+                        <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -36,6 +39,7 @@ function Cart() {
                                 <td>{item.price}</td>
                                 <td>{localStorage.getItem(item.id)}</td>
                                 <td>{localStorage.getItem(item.id)*item.price}</td>
+                                <td><button >Xóa</button></td>
                             </tr>
                         ))}
                         

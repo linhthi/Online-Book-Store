@@ -32,8 +32,11 @@ function BookItem({match}) {
 		else {
 			localStorage.setItem(book.id, 1);
 		}
-		cart.push(book);
-		updateCart(cart);
+
+		if (cart.indexOf(book) == -1) {
+			cart.push(book);
+			updateCart(cart);
+		}
 		
 	}
 
@@ -89,7 +92,7 @@ function BookItem({match}) {
         	<div className="col-md-3">
 
         		<button type="button" className="btn btn-outline-secondary btn-block">
-        		<del>Giá bìa: </del>
+        		<del>Giá bìa: {book.price+3000}</del>
         		</button>
         		<button type="button" className="btn btn-primary btn-block">
         			Giá Sách: {book.price} VND<br/>

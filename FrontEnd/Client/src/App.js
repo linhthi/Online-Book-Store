@@ -10,7 +10,9 @@ import CategoryPage from './CategoryPage';
 import Checkorder from './Check-order';
 import Cart from './Cart';
 import BookItem from './BookItem';
-import Payment from './payment/index.js';
+import Payment1 from './payment';
+import Payment2 from './payment2';
+import Payment3 from './payment3';
 import BookList from './BookList';
 import PromotionPage from './PromotionPage';
 import Slider from './Slider'
@@ -22,15 +24,18 @@ function App() {
         <Header />
         <Brand />
         <MainNav />
+        <Route path="/category/:id" component={BookList} />
         <Route path="/category" component={CategoryPage} />
         <Route path="/topselling" component={BookList} />
         <Route path="/promotion" component={PromotionPage} />
-        <Route path="/discountSpecial" component={CategoryPage} />
+        <Route path="/discountSpecial" component={BookList} />
         <Route path="/" exact component={BooksNewPage} />
         <Route path="/Checkorder" exact component={Checkorder} />
         <Route path="/Cart" exact component={Cart} />
         <Route path="/infor" exact component={BookItem} />
-        <Route path="/payment" exact component={Payment} />
+        <Route path="/payment" exact component={Payment1} />
+        <Route path="/payment2" exact component={Payment2} />
+        <Route path="/payment3" exact component={Payment3} />
         <Route path="/book/:id" component={BookItem} />
       </div>
       </Router>
