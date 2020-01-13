@@ -15,6 +15,7 @@ import Payment2 from './payment2';
 import Payment3 from './payment3';
 import BookList from './BookList';
 import PromotionPage from './PromotionPage';
+import CategoryItem from './CategoryItem';
 import Slider from './Slider'
 function App() {
 
@@ -24,8 +25,8 @@ function App() {
         <Header />
         <Brand />
         <MainNav />
-        <Route path="/category/:id" component={BookList} />
-        <Route path="/category" component={CategoryPage} />
+        <Route path="/category/:id" component={CategoryItem} />
+        <Route path="/category" exact component={CategoryPage} />
         <Route path="/topselling" component={BookList} />
         <Route path="/promotion" component={PromotionPage} />
         <Route path="/discountSpecial" component={BookList} />

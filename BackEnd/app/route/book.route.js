@@ -7,6 +7,9 @@ module.exports = function(app) {
  
     // Retrieve all Book
     app.get('/api/books', books.findAll);
+
+    // Retrieve books by category_id
+    app.get('/api/books/category/:categoryId', books.findByCategory);
  
     // Retrieve a single Book by Id
     app.get('/api/books/:bookId', books.findById);

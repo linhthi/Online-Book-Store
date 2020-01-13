@@ -29,6 +29,17 @@ exports.findAll = (req, res) => {
     res.send(books);
   });
 };
+
+// fetch book by category_id
+exports.findByCategory = (req, res) => {
+  book.findAll({
+    where: {
+      category_id: req.params.categoryId
+    }
+  }).then(books => {
+    res.send(books);
+  })
+};
  
 // Find a book by Id
 exports.findById = (req, res) => {  
