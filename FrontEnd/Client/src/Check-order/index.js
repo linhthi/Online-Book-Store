@@ -10,14 +10,21 @@ function Checkorder() {
 	function handleOnClick(e) {
 		fetchItem();
 	}
-	const fetchItem = async () => {
-		const fetchItem = await fetch(`http://localhost:8081/api/orders/${id}`,
+
+	function fetchItem() {
+		fetch(`http://localhost:8081/api/orders/${id}`,
 		{
 			method: 'GET'
-		});
-		const order = await fetchItem.json();
-		setOrder(order);
+		}).then(res => res.json())
+		.then((data)=> {
+			setOrder(data);
+		})
+		.catch(()=> {
+			alert("Không tìm thấy đơn hàng");
+			setOrder({});
+		})
 	}
+
     return(
     <div>
 
