@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import swal from 'sweetalert';
 
 function Checkorder() {
 
@@ -20,7 +21,7 @@ function Checkorder() {
 			setOrder(data);
 		})
 		.catch(()=> {
-			alert("Không tìm thấy đơn hàng");
+			swal("Không tìm thấy đơn hàng!");
 			setOrder({});
 		})
 	}

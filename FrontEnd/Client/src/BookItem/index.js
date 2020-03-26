@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { useAppContext } from '../ContextApp/useContextApp';
+import swal from 'sweetalert';
 
 
 function BookItem({match}) {
@@ -25,7 +26,7 @@ function BookItem({match}) {
 	}
 
 	function addToBag(){
-		alert("Bạn đã thêm vào giỏ hàng thành công");
+		swal("Bạn đã thêm vào giỏ hàng thành công!");
 		if (localStorage.getItem(book.id) !== null) {
 			localStorage.setItem(book.id, parseInt(localStorage.getItem(book.id)) + 1);
 		}
@@ -44,7 +45,10 @@ function BookItem({match}) {
     return(
     <div>
 
-		<div className= "text-center">   <h2 >Thông tin sản phẩm </h2>  </div>
+		<div className= "text-center">
+			<h2 >Thông tin sản phẩm </h2>  
+		</div>
+		
         <div className="row">
         	<div className="col-md-3" style={{marginLeft:"70px",marginRight:"40px"}}> 
         		<img src={book.cover} alt='ảnh sản phẩm' width="300" height="400" />

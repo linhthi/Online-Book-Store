@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './style.css';
 import { useAppContext } from '../../ContextApp/useContextApp';
-//import {Form, FormControl} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 
 function SearchBox() {
 
@@ -9,50 +9,47 @@ function SearchBox() {
         book
     } = useAppContext();
 
-    const [Text, setText] = useState("");
-    const [match, setMatch] = useState([]);
-    handleChange = handleChange.bind(this);
-    
-    function handleChange(e) {
-        setText(e.target.value);
-        // for (let i = 0; i < books.length; i++) {
-        //     if (books[i].title.includes(Text)) {
-        //         console.log(books[i].title);
-                
-        //     }
-        // };
+    const [load, setLoad] = React.useState(false);
+    const [searchTerm, setSearchTerm] = React.useState("");
+    const [searchResults, setSearchResults] = React.useState([]);
+    const handleChange = event => {
+        setSearchTerm(event.target.value);
+        setLoad(false);
+    };
 
+    const deleteList = event => {
+        setLoad(true);
     }
-
-    function handleOnClick() {
-        console.log(book);
-    }
-    console.log(Text);
     
-    // useEffect(() => {
-    //     fetchBooks();
-    // }, []);  
-    // const [books, setBooks] = useState([]);
-    // const fetchBooks = async () => {
-    //     const data = await fetch('http://localhost:8081/api/books',
-    //         {
-    //            method: 'GET' 
-    //         }
-    //     );
-    //     const books = await data.json();
-    //     console.log(books);
-    //     setBooks(books);
-    // }
-    
-
+    React.useEffect(() => {
+        const results = book.filter(book =>
+          book.title.toLowerCase().includes(searchTerm)
+        );
+        setSearchResults(results);
+      }, [searchTerm]);
     
     return (
         <div>
-             <input  value={Text} onChange={handleChange}
-             className="form-control mr-sm-2" type="search" placeholder="Search"
-             style={{marginTop: "30px"}}>
+             <input value={searchTerm} 
+                    onChange={handleChange}
+                    className="form-control mr-sm-2"
+                    type="search" placeholder="Search"
+                    style={{marginTop: "30px"}}>
              </input>
-             {console.log(book)}
+
+             <ul style={!load ? {} : { display: 'none' }}>
+                {searchResults.map(item => (
+                    <li>
+                        <Link to={`/book/${item.id}`}>
+                            <div>
+                                <a href="#" className="btn btn-primary" onClick={deleteList}>
+                                    {item.title}
+                                </a>
+                            </div>
+                        </Link>
+                    </li>
+                ))}
+            </ul>
 
         </div>
     );
