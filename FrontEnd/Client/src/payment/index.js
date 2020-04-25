@@ -77,23 +77,23 @@ function Payment() {
 				</div>
 
 				<div className="form-group">
-				<label for="address">Địa chỉ:</label>
-				<input type="text" className="form-control" id="address" placeholder="Nhập địa chỉ"
-					onChange={handleAddressChange}/>
+					<label for="address">Địa chỉ:</label>
+					<input type="text" className="form-control" id="address" placeholder="Nhập địa chỉ"
+						onChange={handleAddressChange}/>
 				</div>
 
 				<div>
-				<label>Tên sản phẩm</label>
-				<div style={{backgroundColor: 'white'}}><strong>Tham tham mua he, Tat den</strong></div>
+					<label>Tên sản phẩm</label>
+					<div style={{backgroundColor: 'white'}}><strong>Tham tham mua he, Tat den</strong></div>
 				</div>
 
 				<div style={{marginTop: "2%"}}>
-				<label>Don gia</label>
-				<div style={{backgroundColor: 'white'}}><strong>150000 Vnd</strong></div>
+					<label>Don gia</label>
+					<div style={{backgroundColor: 'white'}}><strong>150000 Vnd</strong></div>
 				</div>
 
 				<div className="d-flex justify-content-center" style={{marginTop: "2%", marginBottom: "2%"}}>
-				<button onClick={confirm}>Xac nhan</button>
+					<button onClick={confirm}>Xac nhan</button>
 				</div>
 
 
