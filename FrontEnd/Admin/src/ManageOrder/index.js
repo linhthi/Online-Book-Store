@@ -43,7 +43,7 @@ function ManageOrder() {
                                 <td>{item.address}</td>
                                 <td>{item.amount}</td>
                                 <td>{item.status}</td>
-                                <td>{item.createdAt}</td>
+                                <td>{item.order_date}</td>
                                 <td><button>Sửa</button></td>
                             </tr>
                         ))}

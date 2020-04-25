@@ -69,7 +69,7 @@ function Checkorder() {
                                 <td>{order.phone_number}</td>
                                 <td>{order.address}</td>
                                 <td>{order.product_name}</td>
-								<td>{order.createdAt}</td>
+								<td>{order.order_date}</td>
 								<td>{order.amount}</td>
                                 <td>{order.status}</td>
                             </tr>
