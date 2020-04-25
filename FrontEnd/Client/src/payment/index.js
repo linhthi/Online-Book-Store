@@ -1,54 +1,58 @@
-import Logo from './logoheader.png';
 import React from 'react';
-import {Link} from 'react-router-dom' 
 
-function Payment1() {
+function Payment() {
     return (
-<div>
-        <img src={Logo} alt='Logo' style={{width:"80%", marginLeft:"100px"}} />
-    <div style={{marginLeft:"150px"}}>
-      <strong >Thông tin người mua:</strong>
+  <div style={{marginTop: "2%"}}>
+    <div className="row">
+      <div className="col-sm-3"></div>
 
-      <div style={{marginRight:"200px"}}>
-        <div className="form-group">
-          <label for="ten">Họ và tên:</label>
-          <input type="text" className="form-control" id="ten" placeholder="Nhập tên" name="text"/>
+      <div className="col-sm-6" style={{backgroundColor: 'lightblue'}}>
+        <div className="d-flex justify-content-center" style={{marginTop: "2%"}}>
+          <strong >HOÀN TẤT THÔNG TIN</strong>
         </div>
-        <div className="form-group">
-          <label for="sdt">Số điện thoại:</label>
-          <input type="number" className="form-control" id="sdt" placeholder="Nhập số điện thoại" name="sdt"/>
-        </div>
-        <div className="form-group">
-          <label for="email">Email:</label>
-          <input type="email" className="form-control" id="email" placeholder="Nhập email" name="email"/>
-        </div>
-        <div className="form-group">
-          <label for="node">Ghi chú:</label>
-          <input type="text" className="form-control" id="node" placeholder="" name="node"/>
-        </div>
-      </div> 
-    </div>       
 
-<div style={{marginLeft:"150px"}}>
-      <strong>Địa chỉ nhận hàng:</strong>
+        <div className="row">
+          <div className="col">
+            <div className="form-group">
+                <label for="name">Họ và tên:</label>
+                <input type="text" className="form-control" id="name" placeholder="Nhập tên" name="name"/>
+            </div>
+          </div>
 
-      <div style={{marginRight:"200px"}}>
-        <div className="form-group">
-          <label for="tp">Địa chỉ:</label>
-          <input type="text" className="form-control" id="tp" placeholder="Nhập địa chỉ" name="tp"/>
+          <div className="col">
+            <div className="form-group">
+              <label for="phone_number">Số điện thoại:</label>
+              <input type="text" className="form-control" id="phone_number" placeholder="Nhập số điện thoại" name="phone_number"/>
+            </div>
+          </div>
         </div>
-        
-      </div> 
-</div>       
-  
-<div>
-<Link to='/payment2'>
-<button type="button" class="btn btn-default" style={{width:"100%",height:"50px",background:"#585858", marginBottom:"20px"}}> 
-    <p style={{fontsize:"20px",color:"#ffffff"}}>Tiếp</p> </button>
-</Link>    
-</div>
-</div>
-    );
-}
 
-export default Payment1;
+        <div className="form-group">
+          <label for="address">Địa chỉ:</label>
+          <input type="text" className="form-control" id="address" placeholder="Nhập địa chỉ" name="address"/>
+        </div>
+
+        <div>
+          <label>Tên sản phẩm</label>
+          <div style={{backgroundColor: 'white'}}><strong>Tham tham mua he, Tat den</strong></div>
+        </div>
+
+        <div style={{marginTop: "2%"}}>
+          <label>Don gia</label>
+          <div style={{backgroundColor: 'white'}}><strong>150000 Vnd</strong></div>
+        </div>
+
+        <div className="d-flex justify-content-center" style={{marginTop: "2%", marginBottom: "2%"}}>
+          <button>Xac nhan</button>
+        </div>
+
+
+      </div>  
+
+      <div className="col-sm-3"></div>
+    
+    </div>
+  </div>
+    )}
+
+export default Payment;
