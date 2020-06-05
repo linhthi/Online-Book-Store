@@ -19,6 +19,7 @@ exports.create = (req, res) => {
 exports.findAll = (req, res) => {
   order.findAll({
     attributes: [
+      'id',
       'client_name', 
       'phone_number', 
       'product_name',

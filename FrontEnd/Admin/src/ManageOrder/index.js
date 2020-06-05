@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import {Link} from 'react-router-dom';
 
 function ManageOrder() {
 
@@ -17,6 +18,11 @@ function ManageOrder() {
         setOrders(orders);
     }
 
+    function deleteOrder(item) {
+        console.log(item);
+    }
+    
+
     return(
         <div>
                 <table className="table table-bordered">
@@ -34,9 +40,10 @@ function ManageOrder() {
                         </tr>
                     </thead>
                     <tbody>
-                        {orders.map((item, index) => (
-                            <tr key={index}>
-                                <th scope="row">{index+1}</th>
+
+                        {orders.map((item) => (
+                            <tr key={item.id}>
+                                <th scope="row">{item.id}</th>
                                 <td>{item.client_name}</td>
                                 <td>{item.phone_number}</td>
                                 <td>{item.product_name}</td>
@@ -44,7 +51,14 @@ function ManageOrder() {
                                 <td>{item.amount}</td>
                                 <td>{item.status}</td>
                                 <td>{item.order_date}</td>
-                                <td><button>Sửa</button></td>
+                                <td>
+                                    <Link to={`/managerOrder/edit/${item.id}`}>
+                                        <button>Sửa</button>
+                                    </Link>
+                                    <Link to={`/managerOrder/delete/${item.id}`}>
+                                        <button>Xoa</button>
+                                    </Link>
+                                </td>
                             </tr>
                         ))}
                         

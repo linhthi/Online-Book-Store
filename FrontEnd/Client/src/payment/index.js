@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import swal from 'sweetalert';
 
 function Payment() {
 
@@ -41,10 +42,12 @@ function Payment() {
 		})
 		.then(response => response.json())
 		.then(response => {
-			console.log(response)
+			console.log(response);
+			swal("Ban da dat sach thanh cong!")
 		})
 		.catch(err => {
-		console.log(err);
+			console.log(err);
+			swal("Loi");
 		});
 	}
 
@@ -55,7 +58,7 @@ function Payment() {
 
 			<div className="col-sm-6" style={{backgroundColor: 'lightblue'}}>
 				<div className="d-flex justify-content-center" style={{marginTop: "2%"}}>
-				<strong >HOÀN TẤT THÔNG TIN</strong>
+					<strong >HOÀN TẤT THÔNG TIN</strong>
 				</div>
 
 				<div className="row">
@@ -95,7 +98,6 @@ function Payment() {
 				<div className="d-flex justify-content-center" style={{marginTop: "2%", marginBottom: "2%"}}>
 					<button onClick={confirm}>Xac nhan</button>
 				</div>
-
 
 			</div>  
 
