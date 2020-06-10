@@ -5,7 +5,7 @@ import swal from 'sweetalert';
 function DeleteOrder({match}) {
 
     function deleteOrder() {
-        fetch(`http://localhost:8081/api/orders/${match.params.id}`, {
+        fetch(`/api/orders/${match.params.id}`, {
             "method": "DELETE"
         })
         .then(response => {

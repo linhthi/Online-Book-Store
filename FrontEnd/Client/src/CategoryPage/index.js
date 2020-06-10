@@ -9,7 +9,7 @@ function CategoryPage() {
     const [categories, setCategories] = useState([]);
 
     const fetchCategories = async () => {
-        const data = await fetch('http://localhost:8081/api/categories',{ method: 'GET' });
+        const data = await fetch('api/categories',{ method: 'GET' });
     
         const categories = await data.json();
         //console.log(books);

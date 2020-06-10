@@ -18,7 +18,7 @@ function BookList() {
     const [books, setBooks] = useState([]);
 
     const fetchBooks = async () => {
-        const data = await fetch('http://localhost:8081/api/books',
+        const data = await fetch('api/books',
             {
                method: 'GET' 
             }

@@ -10,7 +10,7 @@ function CategoryItem({match}) {
     const [books, setBooks] = useState([]);
 
     const fetchItem = async () => {
-		const fetchItem = await fetch(`http://localhost:8081/api/books/category/${match.params.id}`,
+		const fetchItem = await fetch(`api/books/category/${match.params.id}`,
 		{
 			method: 'GET'
 		});

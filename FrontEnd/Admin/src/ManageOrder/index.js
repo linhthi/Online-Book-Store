@@ -10,7 +10,7 @@ function ManageOrder() {
     const [orders, setOrders] = useState([]);
 
     const fetchOrders = async () => {
-        const data = await fetch('http://localhost:8081/api/orders',{method: 'GET' }
+        const data = await fetch('api/orders',{method: 'GET' }
         );
     
         const orders = await data.json();

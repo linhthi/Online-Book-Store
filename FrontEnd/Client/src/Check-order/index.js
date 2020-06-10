@@ -13,7 +13,7 @@ function Checkorder() {
 	}
 
 	function fetchItem() {
-		fetch(`http://localhost:8081/api/orders/${id}`,
+		fetch(`api/orders/${id}`,
 		{
 			method: 'GET'
 		}).then(res => res.json())

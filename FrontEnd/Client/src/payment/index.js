@@ -25,7 +25,7 @@ function Payment() {
 	}
 
 	function fetchPayment() {
-		fetch(`http://localhost:8081/api/orders`, {
+		fetch(`api/orders`, {
 			"method": "POST",
 			"headers": {
 				"content-type": "application/json",

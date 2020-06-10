@@ -17,7 +17,7 @@ function BookItem({match}) {
 	const [book, setBook] = useState({});
 
 	const fetchItem = async () => {
-		const fetchItem = await fetch(`http://localhost:8081/api/books/${match.params.id}`,
+		const fetchItem = await fetch(`api/books/${match.params.id}`,
 		{
 			method: 'GET'
 		});
